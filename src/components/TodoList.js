@@ -20,6 +20,7 @@ class TodoList extends Component {
         const { addNew, changeFilter, changeStatus } = this;
         const count = items.length;
         const filteredItems = applyFilter(items, filter);
+        
         return (
             <div className='todolist'>
                 <Header addNew={addNew.bind(this)} />
