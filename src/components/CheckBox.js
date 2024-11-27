@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+
 class CheckBox extends Component {
     constructor(props) {
         super(props);
@@ -8,6 +10,7 @@ class CheckBox extends Component {
     }
     handleChange(e) {
         const {checked} = e.target;
+        
         this.setState({checked});
         this.props.onChange(checked);
     }

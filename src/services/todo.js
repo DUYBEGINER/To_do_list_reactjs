@@ -24,6 +24,7 @@ export function getAll() {
 export function getItemById(itemId) {
     return getAll().find(item => item.id === itemId);
 }
+
 export function updateStatus(items, itemId, completed) {
     let index = items.findIndex(item => item.id === itemId);
     // Returns a new list of data with updated item.
@@ -53,4 +54,10 @@ export function addToList(list, data) {
     }, data);
 
     return list.concat([item]);
+}
+
+export function deleteToList(list){
+    let tmp = list.filter((item) => item.completed !== true);
+    return update(list, {$set : tmp}
+    );
 }

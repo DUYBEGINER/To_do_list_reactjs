@@ -12,6 +12,7 @@ class InputBox extends React.Component {
     
     handleChange(e) {
         this.setState({value: e.target.value});
+
     }
 
     clear(){
@@ -25,11 +26,13 @@ class InputBox extends React.Component {
             // Add new Todo Here
             // Clear the text box
             addNew(text);
-            this.clear();
+            this.setState({value: ''});
         }
     }
     render() {
-        return (<input type="text"
+        return (
+            <input autoFocus
+            type="text"
             className="form-control add-todo"
             value={this.state.value}
             onKeyUp={this.handleKeyUp.bind(this)}

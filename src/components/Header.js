@@ -1,5 +1,6 @@
 import React from "react";
-import InputBox from "./InputBox";
+
+import InputWrapper from "./InputWrapper";
 
 
 function Header(props) {
@@ -7,7 +8,7 @@ function Header(props) {
     return (
         <header>
         <h1>Thing to Do</h1>
-        <InputBox addNew = {props.addNew}/>
+            <InputWrapper {...props}/>
         </header>
     );
 }
